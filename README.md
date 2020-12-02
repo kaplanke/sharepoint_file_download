@@ -20,7 +20,7 @@ using (var clientContext = new ClientContext(@"https://<sharepoint_url>"))
 {
  
      SecureString password = new SecureString();
-     foreach (char c in "<password>".ToCharArray()) passWord.AppendChar(c);
+     foreach (char c in "<password>".ToCharArray()) password.AppendChar(c);
      clientContext.Credentials = new SharePointOnlineCredentials("<username>@<domain>", password);
      Web web = clientContext.Web;
      clientContext.Load(web);
